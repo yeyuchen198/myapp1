@@ -5,12 +5,15 @@ FROM yuchen168/myapp002
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
+
 COPY html.zip /usr/local/html.zip
 WORKDIR /usr/local
 RUN mkdir html
 RUN unzip html.zip -d html
 
 EXPOSE 10000
+
+RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 
 CMD ["nginx", "-g", "daemon off;"]
 # nginx -g 'daemon off;'
