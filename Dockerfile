@@ -8,7 +8,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY html.zip /usr/local/html.zip
 WORKDIR /usr/local
 RUN mkdir html
-RUN unzip html.zip -d /usr/local/html
+RUN unzip html.zip -d html
 
 EXPOSE 10000
 
