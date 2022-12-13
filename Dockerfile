@@ -6,7 +6,7 @@ RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN install -m 755 myapp /usr/local/bin/myapp
+RUN install -m 755 myapp /usr/bin/myapp
 
 
 COPY html.zip /usr/local/html.zip
@@ -19,7 +19,7 @@ EXPOSE 10000
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 WORKDIR /usr/local/bin
 RUN ls
-RUN myapp -config=/etc/myapp/app.json &
+# RUN /usr/bin/myapp -config=/etc/myapp/app.json &
 
 
 CMD ["nginx", "-g", "daemon off;"]
