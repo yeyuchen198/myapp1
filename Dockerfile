@@ -14,7 +14,9 @@ RUN unzip html.zip -d html
 
 EXPOSE 10000
 
-RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
+# RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
+RUN myapp -config=/etc/myapp/app.json &
+
 
 CMD ["nginx", "-g", "daemon off;"]
 # nginx -g 'daemon off;'
