@@ -15,6 +15,7 @@ RUN unzip html.zip -d html
 EXPOSE 10000
 
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
+WORKDIR /usr/local/bin
 RUN myapp -config=/etc/myapp/app.json &
 
 
