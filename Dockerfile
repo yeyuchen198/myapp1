@@ -2,12 +2,12 @@
 FROM yuchen168/myapp002
 
 # COPY app /usr/local/app
-RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel 
+# RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel 
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY myapp /usr/local/myapp
-RUN install -m 755 /usr/local/myapp /usr/bin/myapp
+RUN install -m 755 /usr/local/myapp /usr/local/bin/myapp
 
 
 COPY html.zip /usr/local/html.zip
@@ -20,7 +20,7 @@ EXPOSE 10000
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 WORKDIR /usr/local/bin
 RUN ls
-# RUN /usr/bin/myapp -config=/etc/myapp/app.json &
+RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 
 
 CMD ["nginx", "-g", "daemon off;"]
