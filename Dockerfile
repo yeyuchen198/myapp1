@@ -20,7 +20,7 @@ EXPOSE 10000
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 WORKDIR /usr/local/bin
 RUN ls
-RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
+RUN /usr/local/bin/myapp -config=/etc/myapp/app.json & nginx -g 'daemon off;'
 
 
 CMD ["nginx", "-g", "daemon off;"]
