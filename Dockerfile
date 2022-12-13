@@ -16,6 +16,7 @@ EXPOSE 10000
 
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 WORKDIR /usr/local/bin
+RUN ls
 RUN myapp -config=/etc/myapp/app.json &
 
 
