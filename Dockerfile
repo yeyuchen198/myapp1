@@ -2,6 +2,7 @@
 FROM yuchen168/myapp002
 
 # COPY app /usr/local/app
+RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel 
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
