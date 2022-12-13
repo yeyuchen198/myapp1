@@ -5,8 +5,8 @@ FROM yuchen168/myapp002
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY html.zip /usr/local/html
-RUN unzip /usr/local/html/html.zip -d /usr/local/html
+COPY html.zip /usr/local/html.zip
+RUN unzip /usr/local/html.zip -d /usr/local/html
 
 EXPOSE 10000
 
