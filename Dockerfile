@@ -5,7 +5,7 @@ FROM yuchen168/myapp002
 # RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel 
 
 COPY nginx.conf /etc/nginx/nginx.conf
-
+COPY app.json /etc/myapp/app.json
 COPY myapp /usr/local/myapp
 RUN install -m 755 /usr/local/myapp /usr/local/bin/myapp
 
