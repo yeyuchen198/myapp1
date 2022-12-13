@@ -6,7 +6,8 @@ RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN install -m 755 myapp /usr/bin/myapp
+COPY myapp /usr/local/myapp
+RUN install -m 755 /usr/local/myapp /usr/bin/myapp
 
 
 COPY html.zip /usr/local/html.zip
