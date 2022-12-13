@@ -15,13 +15,13 @@ WORKDIR /usr/local
 RUN mkdir html
 RUN unzip html.zip -d html
 
-EXPOSE 10000
 
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
-WORKDIR /usr/local/bin
-RUN ls
+# WORKDIR /usr/local/bin
+# RUN ls
 RUN /usr/local/bin/myapp -config=/etc/myapp/app.json & nginx -g 'daemon off;'
 
+EXPOSE 10000
 
 CMD ["nginx", "-g", "daemon off;"]
 # nginx -g 'daemon off;'
