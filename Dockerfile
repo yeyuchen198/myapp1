@@ -19,13 +19,13 @@ RUN unzip html.zip -d html
 # RUN /usr/local/bin/myapp -config=/etc/myapp/app.json &
 # WORKDIR /usr/local/bin
 # RUN ls
-RUN /usr/local/bin/myapp -config=/etc/myapp/app.json && nginx -g 'daemon off;'
+# RUN /usr/local/bin/myapp -config=/etc/myapp/app.json && nginx -g 'daemon off;'
 
 EXPOSE 10000
 
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
 # nginx -g 'daemon off;'
 
-# ADD app.sh /
-# RUN chmod +x /app.sh
-# CMD /app.sh
+ADD app.sh /
+RUN chmod +x /app.sh
+CMD /app.sh
