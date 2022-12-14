@@ -1,6 +1,7 @@
 # FROM nginx:1.19.3-alpine
 FROM yuchen168/myapp002
 
+
 # COPY app /usr/local/app
 # RUN mv /docker-entrypoint.sh /docker-entrypoint.sh.cancel 
 
