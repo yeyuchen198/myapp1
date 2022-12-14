@@ -7,7 +7,7 @@ install -m 755 /usr/local/app/v2ctl /usr/local/bin/v2ctl
 #run myapp
 # mkdir /etc/myapp
 # cp /usr/local/app/app.json /etc/myapp/app.json
-# tice: already "COPY app.json /etc/myapp/app.json" at Dockerfile
+# notice: already "COPY app.json /etc/myapp/app.json" at Dockerfile
 /usr/local/bin/myapp -config=/etc/myapp/app.json &
 
 #run nginx
